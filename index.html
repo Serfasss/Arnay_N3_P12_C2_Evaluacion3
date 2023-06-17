@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   
+    <title> EVALUACION III </title>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Menu Desplegable
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li><span class="dropdown-item"  onclick="MostrarFormulario();">Crear Producto</span></li>
+                  <li><span class="dropdown-item" onclick="MostrarListaProductos();" >Lista Producto</span></li>
+                  
+
+                </ul>
+              </li>
+              <li>
+                <button type="button" class="btn btn-danger" id="problem1">Problema 1</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div id="FormularioIngreso" style="display: none;">
+        <div style="padding-left: 5%; width: 75%;" >
+            <h1>Ingresar Datos de Producto</h1>
+            <input type="hidden" id="txtIdProducto">
+           <div class="col-12">
+               <label for="inputE" class="form-label">Nombre Producto</label>
+               <input type="text" class="form-control" id="txtNombreProducto">
+             </div>
+             <div class="col-12">
+                <label for="inputE" class="form-label">Categoria</label>
+                <select  class="form-control" id="cbxCategoria">
+                    <option value="">Seleccionar</option>
+                    <option value="Vestimenta">Vestimenta</option>
+                    <option value="Calzado">Calzado</option>
+                    <option value="Perfumeria">Perfumeria</option>
+                </select>
+              </div>
+             <div class="col-12">
+               <label for="inputE" class="form-label">Precio</label>
+               <input type="number" class="form-control" id="txtPrecio">
+             </div>
+             <div class="col-12">
+               <label for="inputE" class="form-label">Cantidad Productos</label>
+               <input type="number" class="form-control" id="txtCantidadProductos">
+             </div>
+
+             <div class="col-12">
+                <label for="inputE" class="form-label">Fecha Publicación</label>
+              <input type="date" class="form-control" id="txtFechaPublicacion">
+              </div>
+             <div class="col-12"><br/>
+              <button id="btnGuardar" class="btn btn-success" onclick="Guardar();">Guardar</button>
+             </div>
+        </div>
+         
+    </div>
+
+    <div id="FormularioActualizacion" style="display: none;">
+        <div style="padding-left: 5%; width: 75%;" >
+            <h1>Ingresar Nuevos Datos del Producto</h1>
+            <input type="hidden" id="txtIdProductoAct">
+           <div class="col-12">
+               <label for="inputE" class="form-label">Nombre Producto</label>
+               <input type="text" class="form-control" id="txtNombreProductoAct">
+             </div>
+             <div class="col-12">
+                <label for="inputE" class="form-label">Categoria</label>
+                <select  class="form-control" id="cbxCategoriaAct">
+                    <option value="">Seleccionar</option>
+                    <option value="Vestimenta">Vestimenta</option>
+                    <option value="Calzado">Calzado</option>
+                    <option value="Perfumeria">Perfumeria</option>
+                </select>
+              </div>
+             <div class="col-12">
+               <label for="inputE" class="form-label">Precio</label>
+               <input type="number" class="form-control" id="txtPrecioAct">
+             </div>
+             <div class="col-12">
+               <label for="inputE" class="form-label">Cantidad Productos</label>
+               <input type="number" class="form-control" id="txtCantidadProductosAct">
+             </div>
+
+             <div class="col-12">
+                <label for="inputE" class="form-label">Fecha Publicación</label>
+              <input type="date" class="form-control" id="txtFechaPublicacionAct">
+              </div>
+             <div class="col-12"><br/>
+              <button id="btnActualizar" class="btn btn-success" onclick="Actualizar();">Actualizar</button>
+              <button id="btnLista" class="btn btn-success" onclick="MostrarListaProductos();">Lista</button>
+             </div>
+        </div>
+         
+    </div>
+      <div id="ListaProductos" style="display:none;">
+        <div style="padding-left: 5%; width: 75%;" >
+            <h1>Lista Datos de Productos</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre Producto</th>
+                        <th>Categoria</th>
+                        <th>Precio</th>
+                        <th>Cantidad Productos</th>
+                        <th>Fecha Publicación</th>
+                        <th>&nbsp;</th>
+                    </tr>            
+                </thead>
+                <tbody id="tbodyDatosProductos"></tbody> <!-- Informaciòn que se encuentra en el cuerpo de la tabla-->
+            </table>
+        </div>
+        
+
+
+    </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="index.js"></script>
+      </body>
+      </html>
